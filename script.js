@@ -6,39 +6,20 @@ let container = document.createElement('div');
 container.className = 'container';
 document.body.appendChild(container);
 
+let children
 
-// function createCol(colNum) { 
-//     let column = document.createElement('div');
-//     column.className = 'column';
-//     container.appendChild(column);
-//     for (i = 0; i < colNum; i++) {
-//         let square = document.createElement('div');
-//         column.appendChild(square).className = ('col square');
-//     }
-// }   
-
-function createRow(rowNum) {
+function createGrid(rowNum) {
     for (i = 0; i < rowNum; i++) {
         let square = document.createElement('div');
         container.appendChild(square).className = ('row square');
         for (j = 0; j < rowNum; j++) {
-            let innerSquare = document.createElement('div');
-            square.appendChild(innerSquare).className = ('children square');
+            let indivSquare = document.createElement('div');
+            square.appendChild(indivSquare).className = ('individual square');
         }
     }
 }
 
-createRow(16);
-
-
-
-
-
-// function createGrid(rowNum, colNum) {
-//     for (i = 0; i < rowNum; i++) {
-//         createCol(colNum);
-//     }
-// }
+createGrid(20);
 
 
 
