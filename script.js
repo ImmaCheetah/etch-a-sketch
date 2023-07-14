@@ -6,13 +6,15 @@ let container = document.createElement('div');
 container.className = 'container';
 document.body.appendChild(container);
 
-let column = document.createElement('div');
-column.className = 'column';
-container.appendChild(column);
 
+
+createCol(16);
 createCol(16);
 
 function createCol(colNum) { 
+    let column = document.createElement('div');
+    column.className = 'column';
+    container.appendChild(column);
     for (i = 0; i < colNum; i++) {
         let square = document.createElement('div');
         column.appendChild(square).className = ('col square');
