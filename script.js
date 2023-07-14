@@ -6,7 +6,7 @@ let container = document.createElement('div');
 container.className = 'container';
 document.body.appendChild(container);
 
-createGrid(16);
+createRow(16);
 
 function createRow(rowNum) { 
     for (i = 0; i < rowNum; i++) {
