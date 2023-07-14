@@ -6,11 +6,14 @@ let container = document.createElement('div');
 container.className = 'container';
 document.body.appendChild(container);
 
-createRow(16);
+createGrid(16, 16);
 
-function createRow(rowNum) { 
+function createGrid(colNum, rowNum) { 
     for (i = 0; i < rowNum; i++) {
-        let square = document.createElement('div');
-        container.appendChild(square).className = ('row square');
-    }
+        for (j = 0; j < colNum; j++) {
+            let square = document.createElement('div');
+            container.appendChild(square).className = ('col square');
+        }
+    }      
 }
+
