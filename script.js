@@ -21,6 +21,10 @@ function createRow(rowNum) {
     for (i = 0; i < rowNum; i++) {
         let square = document.createElement('div');
         container.appendChild(square).className = ('row square');
+        for (j = 0; j < rowNum; j++) {
+            let innerSquare = document.createElement('div');
+            square.appendChild(innerSquare).className = ('children square');
+        }
     }
 }
 
