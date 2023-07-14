@@ -11,6 +11,6 @@ createGrid(16);
 function createGrid(rowNum) { 
     for (i = 0; i < rowNum; i++) {
         let square = document.createElement('div');
-        container.appendChild(square);
+        container.appendChild(square).className = ('row square');
     }
 }
