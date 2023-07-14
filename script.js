@@ -1,12 +1,7 @@
-// Creating 16x16 grid
-
-
 // Create container to hold grid
 let container = document.createElement('div');
 container.className = 'container';
 document.body.appendChild(container);
-
-let children
 
 function createGrid(rowNum) {
     for (i = 0; i < rowNum; i++) {
@@ -19,7 +14,18 @@ function createGrid(rowNum) {
     }
 }
 
-createGrid(20);
+createGrid(16);
+
+let individual = document.querySelector('.individual');
+console.log(individual);
+individual.addEventListener('mouseover', paint);
+
+function paint(e) {
+    individual.style.backgroundColor = 'black';
+}
+
+
+
 
 
 
