@@ -8,11 +8,15 @@ document.body.appendChild(container);
 
 
 function createGrid(colNum) {
+    let size = 100 / colNum;
     for (let i = 0; i < colNum; i++) {
         let square = document.createElement('div');
+        // square.style.cssText = `height: ${size}; width: ${size};`;
         container.appendChild(square).className = ('column square');
+        
         for (let j = 0; j < colNum; j++) {
             let indivSquare = document.createElement('div');
+            indivSquare.style.cssText = `height: ${size}; width: ${size};`;
             square.appendChild(indivSquare).className = ('individual square');
             // Add event listener here to avoid duplicates being created every time the loop runs
             indivSquare.addEventListener('mouseover', () => indivSquare.style.backgroundColor = 'red');
