@@ -14,6 +14,7 @@ function createGrid(colNum) {
         for (let j = 0; j < colNum; j++) {
             let indivSquare = document.createElement('div');
             square.appendChild(indivSquare).className = ('individual square');
+            // Add event listener here to avoid duplicates being created every time the loop runs
             indivSquare.addEventListener('mouseover', () => indivSquare.style.backgroundColor = 'red');
         }
     }
@@ -22,10 +23,7 @@ function createGrid(colNum) {
     // squares.forEach(square => {
     //     square.addEventListener('mouseover', () => square.style.backgroundColor = 'red');
     //   });
-    
 }
-
-// console.log(squares);
 
 button.addEventListener('click', promptUser);
 
@@ -34,8 +32,8 @@ function promptUser() {
     if (input > 100 || input < 1) {
         alert('Please enter a number between 1 and 100');
     } else {
+        container.innerHTML = '';
         createGrid(input);
-        // console.log(squares);
     }
 }
 

@@ -8,3 +8,10 @@
     width: 30px;
     border: 1px solid rgb(55, 53, 53);
 }
+
+button {
+    height: 25px;
+    width: 60px;
+    background-color: aquamarine;
+    border: 2px solid black;
+}
