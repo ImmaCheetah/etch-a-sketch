@@ -26,16 +26,26 @@ function createGrid(colNum) {
             indivSquare.addEventListener('mouseover', () => indivSquare.style.backgroundColor = 'red');
         }
     }
-    // let squares = document.querySelectorAll('.individual');
-
-    // squares.forEach(square => {
-    //     square.addEventListener('mouseover', () => square.style.backgroundColor = 'red');
-    //   });
+    
 }
 
 createGrid(24);
 
 gridSizeBtn.addEventListener('click', promptUser);
+// clearBtn.addEventListener('click', clear);
+
+let squares = document.querySelectorAll('.individual');
+
+    squares.forEach(square => {
+        clearBtn.addEventListener('click', () => square.style.backgroundColor = 'white');
+      });
+
+function clear() {
+    let canvas = document.querySelectorAll('.individual');
+    canvas.style.backgroundColor = 'white';
+    console.log(canvas);
+
+}
 
 function promptUser() {
     let input = prompt('Enter size of grid ');
