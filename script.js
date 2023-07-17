@@ -6,6 +6,12 @@ let clearBtn = document.createElement('button');
 clearBtn.textContent = "Clear";
 document.body.appendChild(clearBtn);
 
+let colourBtn = document.createElement('input');
+colourBtn.setAttribute('type', 'color');
+colourBtn.setAttribute('value', '#000000');
+document.body.appendChild(colourBtn);
+
+
 // Create container to hold grid
 let container = document.createElement('div');
 container.className = 'container';
@@ -23,7 +29,7 @@ function createGrid(colNum) {
             indivSquare.style.cssText = `height: ${size}px; width: ${size}px;`;
             square.appendChild(indivSquare).className = ('individual square');
             // Add event listener here to avoid duplicates being created every time the loop runs
-            indivSquare.addEventListener('mouseover', () => indivSquare.style.backgroundColor = 'red');
+            indivSquare.addEventListener('mouseover', () => indivSquare.style.backgroundColor = 'black');
         }
     }
     
@@ -32,19 +38,17 @@ function createGrid(colNum) {
 createGrid(24);
 
 gridSizeBtn.addEventListener('click', promptUser);
-// clearBtn.addEventListener('click', clear);
 
 let squares = document.querySelectorAll('.individual');
 
-    squares.forEach(square => {
-        clearBtn.addEventListener('click', () => square.style.backgroundColor = 'white');
-      });
+squares.forEach(square => {
+    clearBtn.addEventListener('click', () => square.style.backgroundColor = 'white');
+  });
 
 function clear() {
     let canvas = document.querySelectorAll('.individual');
     canvas.style.backgroundColor = 'white';
     console.log(canvas);
-
 }
 
 function promptUser() {
