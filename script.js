@@ -1,4 +1,5 @@
 let button = document.createElement('button');
+button.textContent = "Grid Size";
 document.body.appendChild(button);
 
 // Create container to hold grid
@@ -11,7 +12,6 @@ function createGrid(colNum) {
     let size = 500 / colNum;
     for (let i = 0; i < colNum; i++) {
         let square = document.createElement('div');
-        // square.style.cssText = `height: ${size}; width: ${size};`;
         container.appendChild(square).className = ('column square');
         
         for (let j = 0; j < colNum; j++) {
@@ -28,6 +28,8 @@ function createGrid(colNum) {
     //     square.addEventListener('mouseover', () => square.style.backgroundColor = 'red');
     //   });
 }
+
+createGrid(24);
 
 button.addEventListener('click', promptUser);
 
