@@ -7,20 +7,21 @@ container.className = 'container';
 document.body.appendChild(container);
 
 
-function createGrid(rowNum) {
-    for (let i = 0; i < rowNum; i++) {
+function createGrid(colNum) {
+    for (let i = 0; i < colNum; i++) {
         let square = document.createElement('div');
-        container.appendChild(square).className = ('row square');
-        for (let j = 0; j < rowNum; j++) {
+        container.appendChild(square).className = ('column square');
+        for (let j = 0; j < colNum; j++) {
             let indivSquare = document.createElement('div');
             square.appendChild(indivSquare).className = ('individual square');
+            indivSquare.addEventListener('mouseover', () => indivSquare.style.backgroundColor = 'red');
         }
     }
-    let squares = document.querySelectorAll('.individual');
+    // let squares = document.querySelectorAll('.individual');
 
-    squares.forEach(square => {
-        square.addEventListener('mouseover', () => square.style.backgroundColor = 'red');
-      });
+    // squares.forEach(square => {
+    //     square.addEventListener('mouseover', () => square.style.backgroundColor = 'red');
+    //   });
     
 }
 
