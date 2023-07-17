@@ -1,4 +1,3 @@
-
 let button = document.createElement('button');
 document.body.appendChild(button);
 
@@ -17,29 +16,25 @@ function createGrid(rowNum) {
             square.appendChild(indivSquare).className = ('individual square');
         }
     }
+    let squares = document.querySelectorAll('.individual');
+
+    squares.forEach(square => {
+        square.addEventListener('mouseover', () => square.style.backgroundColor = 'red');
+      });
+    
 }
 
-createGrid(16);
-
-let squares = document.querySelectorAll('.individual');
-
-squares.forEach(square => {
-    square.addEventListener('mouseover', () => square.style.backgroundColor = 'red');
-  });
-
+// console.log(squares);
 
 button.addEventListener('click', promptUser);
 
 function promptUser() {
     let input = prompt('Enter size of grid ');
-    console.log(input);
+    if (input > 100 || input < 1) {
+        alert('Please enter a number between 1 and 100');
+    } else {
+        createGrid(input);
+        // console.log(squares);
+    }
 }
-
-
-
-
-
-
-
-
 
