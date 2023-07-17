@@ -40,20 +40,19 @@ createGrid(24);
 
 gridSizeBtn.addEventListener('click', promptUser);
 
-colourBtn.addEventListener('click', setColour)
-
+// colourBtn.addEventListener('click', setColour)
 
 let squares = document.querySelectorAll('.individual');
 
 squares.forEach(square => {
-    clearBtn.addEventListener('click', () => square.style.backgroundColor = 'white');
-  });
+      clearBtn.addEventListener('click', () => square.style.backgroundColor = 'white');
+    });
 
-function clear() {
-    let canvas = document.querySelectorAll('.individual');
-    canvas.style.backgroundColor = 'white';
-    console.log(canvas);
-}
+
+// function clear() {
+//     let canvas = document.querySelectorAll('.individual');
+//     canvas.style.backgroundColor = 'white';
+// }
 
 function promptUser() {
     let input = prompt('Enter size of grid ');
@@ -62,6 +61,10 @@ function promptUser() {
     } else {
         container.innerHTML = '';
         createGrid(input);
+        let squares = document.querySelectorAll('.individual');
+        squares.forEach(square => {
+            clearBtn.addEventListener('click', () => square.style.backgroundColor = 'white');
+          });
     }
 }
 
