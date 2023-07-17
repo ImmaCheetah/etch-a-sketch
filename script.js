@@ -8,8 +8,6 @@ container.className = 'container';
 document.body.appendChild(container);
 
 
-
-
 function createGrid(rowNum) {
     for (let i = 0; i < rowNum; i++) {
         let square = document.createElement('div');
@@ -29,6 +27,13 @@ squares.forEach(square => {
     square.addEventListener('mouseover', () => square.style.backgroundColor = 'red');
   });
 
+
+button.addEventListener('click', promptUser);
+
+function promptUser() {
+    let input = prompt('Enter size of grid ');
+    console.log(input);
+}
 
 
 
