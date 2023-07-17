@@ -1,6 +1,10 @@
-let button = document.createElement('button');
-button.textContent = "Grid Size";
-document.body.appendChild(button);
+let gridSizeBtn = document.createElement('button');
+gridSizeBtn.textContent = "Grid Size";
+document.body.appendChild(gridSizeBtn);
+
+let clearBtn = document.createElement('button');
+clearBtn.textContent = "Clear";
+document.body.appendChild(clearBtn);
 
 // Create container to hold grid
 let container = document.createElement('div');
@@ -31,7 +35,7 @@ function createGrid(colNum) {
 
 createGrid(24);
 
-button.addEventListener('click', promptUser);
+gridSizeBtn.addEventListener('click', promptUser);
 
 function promptUser() {
     let input = prompt('Enter size of grid ');
