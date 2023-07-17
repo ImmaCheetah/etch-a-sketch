@@ -1,7 +1,14 @@
+
+let button = document.createElement('button');
+document.body.appendChild(button);
+
 // Create container to hold grid
 let container = document.createElement('div');
 container.className = 'container';
 document.body.appendChild(container);
+
+
+
 
 function createGrid(rowNum) {
     for (let i = 0; i < rowNum; i++) {
@@ -18,12 +25,8 @@ createGrid(16);
 
 let squares = document.querySelectorAll('.individual');
 
-function paint(e) {
-    squares.style.backgroundColor = 'black';
-}
-
 squares.forEach(square => {
-    square.addEventListener('mouseover', () => square.style.backgroundColor = 'black');
+    square.addEventListener('mouseover', () => square.style.backgroundColor = 'red');
   });
 
 
