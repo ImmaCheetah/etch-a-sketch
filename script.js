@@ -14,9 +14,10 @@ let randomBtn = document.createElement('button');
 randomBtn.textContent = "Random";
 buttonDiv.appendChild(randomBtn);
 
+let check = true;
+
 let colourBtn = document.createElement('input');
 colourBtn.setAttribute('type', 'color');
-// colourBtn.setAttribute('value', '#000000');
 buttonDiv.appendChild(colourBtn);
 
 // Create container to hold grid
@@ -36,23 +37,42 @@ function createGrid(colNum) {
             indivSquare.style.cssText = `height: ${size-2}px; width: ${size-2}px;`;
             square.appendChild(indivSquare).className = ('individual square');
             // Add event listener here to avoid duplicates being created every time the loop runs
-            indivSquare.addEventListener('mouseover', () => indivSquare.style.backgroundColor = colour);
+            indivSquare.addEventListener('mouseover', ()  => {
+                if (check) {
+                    indivSquare.style.backgroundColor = colour;   
+                } else {
+                    indivSquare.style.backgroundColor = randomRGB();
+                }
+            }); 
         }
     }
-    
-}
+} 
+
 
 createGrid(24);
 
 gridSizeBtn.addEventListener('click', promptUser);
-
 colourBtn.addEventListener('change', () => colour = colourBtn.value);
+randomBtn.addEventListener('click', () => {
+    if (check) {
+        check = false;
+    } else {
+        check = true;
+    }
+});
 
 let squares = document.querySelectorAll('.individual');
 
 squares.forEach(square => {
       clearBtn.addEventListener('click', () => square.style.backgroundColor = 'white');
     });
+
+function randomRGB() {
+    let r = Math.floor(Math.random() * 256);
+    let g = Math.floor(Math.random() * 256);
+    let b = Math.floor(Math.random() * 256);
+    return colour = `rgb(${r}, ${g}, ${b})`;
+}
 
 
 function promptUser() {
