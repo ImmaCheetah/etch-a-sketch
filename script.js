@@ -46,12 +46,7 @@ createGrid(24);
 
 gridSizeBtn.addEventListener('click', promptUser);
 
-colourBtn.addEventListener('change', setColour);
-
-function setColour() {
-    colour = colourBtn.value;
-    console.log(colourBtn.value);
-}
+colourBtn.addEventListener('change', () => colour = colourBtn.value);
 
 let squares = document.querySelectorAll('.individual');
 
