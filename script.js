@@ -1,3 +1,5 @@
+let colour = '#000000';
+
 let buttonDiv = document.querySelector('.buttons')
 
 let gridSizeBtn = document.createElement('button');
@@ -10,7 +12,7 @@ buttonDiv.appendChild(clearBtn);
 
 let colourBtn = document.createElement('input');
 colourBtn.setAttribute('type', 'color');
-colourBtn.setAttribute('value', '#000000');
+// colourBtn.setAttribute('value', '#000000');
 buttonDiv.appendChild(colourBtn);
 
 // Create container to hold grid
@@ -30,7 +32,7 @@ function createGrid(colNum) {
             indivSquare.style.cssText = `height: ${size-2}px; width: ${size-2}px;`;
             square.appendChild(indivSquare).className = ('individual square');
             // Add event listener here to avoid duplicates being created every time the loop runs
-            indivSquare.addEventListener('mouseover', () => indivSquare.style.backgroundColor = 'black');
+            indivSquare.addEventListener('mouseover', () => indivSquare.style.backgroundColor = colour);
         }
     }
     
@@ -40,7 +42,12 @@ createGrid(24);
 
 gridSizeBtn.addEventListener('click', promptUser);
 
-// colourBtn.addEventListener('click', setColour)
+colourBtn.addEventListener('change', setColour);
+
+function setColour() {
+    colour = colourBtn.value;
+    console.log(colourBtn.value);
+}
 
 let squares = document.querySelectorAll('.individual');
 
@@ -48,11 +55,6 @@ squares.forEach(square => {
       clearBtn.addEventListener('click', () => square.style.backgroundColor = 'white');
     });
 
-
-// function clear() {
-//     let canvas = document.querySelectorAll('.individual');
-//     canvas.style.backgroundColor = 'white';
-// }
 
 function promptUser() {
     let input = prompt('Enter size of grid ');
@@ -67,4 +69,5 @@ function promptUser() {
           });
     }
 }
+
 
