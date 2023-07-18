@@ -56,8 +56,10 @@ colourBtn.addEventListener('change', () => colour = colourBtn.value);
 randomBtn.addEventListener('click', () => {
     if (check) {
         check = false;
+        randomBtn.style.backgroundColor = '#44BBA4';
     } else {
         check = true;
+        randomBtn.style.backgroundColor = '#ffac53';
     }
 });
 
