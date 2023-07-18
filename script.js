@@ -39,7 +39,7 @@ function createGrid(colNum) {
             // Add event listener here to avoid duplicates being created every time the loop runs
             indivSquare.addEventListener('mouseover', ()  => {
                 if (check) {
-                    indivSquare.style.backgroundColor = colour;   
+                    indivSquare.style.backgroundColor = colourBtn.value;   
                 } else {
                     indivSquare.style.backgroundColor = randomRGB();
                 }
@@ -47,7 +47,6 @@ function createGrid(colNum) {
         }
     }
 } 
-
 
 createGrid(24);
 
