@@ -10,6 +10,10 @@ let clearBtn = document.createElement('button');
 clearBtn.textContent = "Clear";
 buttonDiv.appendChild(clearBtn);
 
+let randomBtn = document.createElement('button');
+randomBtn.textContent = "Random";
+buttonDiv.appendChild(randomBtn);
+
 let colourBtn = document.createElement('input');
 colourBtn.setAttribute('type', 'color');
 // colourBtn.setAttribute('value', '#000000');
